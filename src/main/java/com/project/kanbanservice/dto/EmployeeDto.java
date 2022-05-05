@@ -12,6 +12,9 @@ public class EmployeeDto {
     private Long id;
 
     @NonNull
+    private String username;
+
+    @NonNull
     private String email;
 
     @NonNull

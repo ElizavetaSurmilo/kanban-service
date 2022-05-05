@@ -19,6 +19,9 @@ public class EmployeeEntity {
     private Long id;
 
     @Column(unique = true)
+    private String username;
+
+    @Column(unique = true)
     private String email;
 
     @Column(unique = true)

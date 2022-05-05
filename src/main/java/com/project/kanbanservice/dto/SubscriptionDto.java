@@ -19,5 +19,5 @@ public class SubscriptionDto {
     private int teamLimit;
 
     @NonNull
-    private boolean price;
+    private double price;
 }

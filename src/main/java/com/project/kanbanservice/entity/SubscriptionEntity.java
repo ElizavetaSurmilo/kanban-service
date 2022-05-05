@@ -22,7 +22,7 @@ public class SubscriptionEntity {
 
     private int teamLimit;
 
-    private boolean price;
+    private double price;
 
     @OneToMany
     @JoinColumn(name = "directors_id")
