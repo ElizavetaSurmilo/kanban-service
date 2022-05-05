@@ -3,6 +3,7 @@ package com.project.kanbanservice.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 @Getter
@@ -23,6 +24,8 @@ public class TaskEntity {
     private String description;
 
     private Timestamp creationDate;
+
+    private Date deadline;
 
     @ManyToOne
     @JoinColumn(name = "director_id")
