@@ -28,6 +28,7 @@ public class DirectorEntity {
 
     private int countEmployees;
 
+    @Column(unique = true)
     private String connectionId;
 
     @OneToMany
