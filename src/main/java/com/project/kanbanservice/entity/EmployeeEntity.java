@@ -28,26 +28,17 @@ public class EmployeeEntity {
     private String password;
 
     @ManyToOne
-    @JoinColumn(name = "director_id")
-    private DirectorEntity directors;
+    private DirectorEntity director;
 
-    @OneToMany
-    @JoinColumn(name = "tasks_id")
+    @OneToMany(mappedBy = "employee")
     private Set<TaskEntity> tasks;
 
-    @ManyToMany
-    @JoinTable(
-            name = "employees_projects",
-            joinColumns = { @JoinColumn(name = "employees_id") },
-            inverseJoinColumns = { @JoinColumn(name = "projects_id") }
-    )
+    @ManyToMany(mappedBy = "employees")
     Set<ProjectEntity> projects;
 
-    @ManyToMany
-    @JoinTable(
-            name = "employees_tags",
-            joinColumns = { @JoinColumn(name = "employees_id") },
-            inverseJoinColumns = { @JoinColumn(name = "tags_id") }
-    )
-    Set<ProjectEntity> tags;
+    @ManyToMany(mappedBy = "employees")
+    Set<TagEntity> tags;
+
+    @OneToOne(mappedBy = "employee")
+    private ProfileEntity profile;
 }

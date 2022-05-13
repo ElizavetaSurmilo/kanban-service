@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -28,18 +29,17 @@ public class TaskEntity {
     private Date deadline;
 
     @ManyToOne
-    @JoinColumn(name = "director_id")
     private DirectorEntity director;
 
     @ManyToOne
-    @JoinColumn(name = "project_id")
     private ProjectEntity project;
 
     @ManyToOne
-    @JoinColumn(name = "status_id")
     private StatusEntity status;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id")
     private EmployeeEntity employee;
+
+    @OneToMany(mappedBy = "task")
+    private Set<CommentEntity> comments;
 }

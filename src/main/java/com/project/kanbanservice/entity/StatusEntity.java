@@ -24,8 +24,7 @@ public class StatusEntity {
 
     private String title;
 
-    @OneToMany
-    @JoinColumn(name = "tasks_id")
+    @OneToMany(mappedBy = "status")
     private Set<TaskEntity> tasks;
 
 }

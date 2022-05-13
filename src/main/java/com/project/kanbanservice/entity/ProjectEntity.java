@@ -26,27 +26,15 @@ public class ProjectEntity {
     private Timestamp creationDate;
 
     @ManyToOne
-    @JoinColumn(name = "director_id")
-    private DirectorEntity directors;
+    private DirectorEntity director;
 
-    @OneToMany
-    @JoinColumn(name = "tasks_id")
+    @OneToMany(mappedBy = "project")
     private Set<TaskEntity> tasks;
 
     @ManyToMany
-    @JoinTable(
-            name = "employees_projects",
-            joinColumns = { @JoinColumn(name = "employees_id") },
-            inverseJoinColumns = { @JoinColumn(name = "projects_id") }
-    )
     private Set<EmployeeEntity> employees;
 
-    @ManyToMany
-    @JoinTable(
-            name = "projects_tags",
-            joinColumns = { @JoinColumn(name = "projects_id") },
-            inverseJoinColumns = { @JoinColumn(name = "tags_id") }
-    )
-    Set<ProjectEntity> tags;
+    @ManyToMany(mappedBy = "projects")
+    Set<TagEntity> tags;
 
 }

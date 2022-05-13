@@ -20,6 +20,7 @@ public class DirectorController {
 
     private final DirectorRepository directorRepository;
     private final DirectorDtoFactory directorDtoFactory;
+    //@RequestParam(value = "director_username", required = false) Optional<String> optionalDirectorUsername
 
     public static final String CREATE_DIRECTOR = "/director";
 

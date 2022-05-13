@@ -24,7 +24,6 @@ public class SubscriptionEntity {
 
     private double price;
 
-    @OneToMany
-    @JoinColumn(name = "directors_id")
+    @OneToMany(mappedBy = "subscription")
     private Set<DirectorEntity> directors;
 }

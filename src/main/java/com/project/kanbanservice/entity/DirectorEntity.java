@@ -31,27 +31,21 @@ public class DirectorEntity {
     @Column(unique = true)
     private String connectionId;
 
-    @OneToMany
-    @JoinColumn(name = "employees_id")
+    @OneToMany(mappedBy = "director")
     private Set<EmployeeEntity> employees;
 
     @ManyToOne
-    @JoinColumn(name = "subscription_id")
     private SubscriptionEntity subscription;
 
-    @OneToMany
-    @JoinColumn(name = "projects_id")
+    @OneToMany(mappedBy = "director")
     private Set<ProjectEntity> projects;
 
-    @OneToMany
-    @JoinColumn(name = "tasks_id")
-    private Set<TaskEntity> task;
+    @OneToMany(mappedBy = "director")
+    private Set<TaskEntity> tasks;
 
-    @ManyToMany
-    @JoinTable(
-            name = "directors_tags",
-            joinColumns = { @JoinColumn(name = "directors_id") },
-            inverseJoinColumns = { @JoinColumn(name = "tags_id") }
-    )
-    Set<ProjectEntity> tags;
+    @ManyToMany(mappedBy = "directors")
+    Set<TagEntity> tags;
+
+    @OneToOne(mappedBy = "director")
+    private ProfileEntity profile;
 }

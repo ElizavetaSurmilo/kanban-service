@@ -1,8 +1,10 @@
 package com.project.kanbanservice.entity;
 
+
 import lombok.*;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Set;
 
 @Getter
@@ -11,8 +13,8 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tags")
-public class TagEntity {
+@Table(name = "comments")
+public class CommentEntity {
 
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Id
@@ -20,12 +22,12 @@ public class TagEntity {
 
     private String title;
 
-    @ManyToMany
-    private Set<DirectorEntity> directors;
+    private String username;
 
-    @ManyToMany
-    private Set<EmployeeEntity> employees;
+    private byte[] img;
 
-    @ManyToMany
-    private Set<ProjectEntity> projects;
+    private Timestamp creationDate;
+
+    @ManyToOne
+    private TaskEntity task;
 }
