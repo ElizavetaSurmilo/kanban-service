@@ -1,9 +1,8 @@
 package com.project.kanbanservice.entity;
-
-
 import lombok.*;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Set;
 
@@ -13,20 +12,15 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "comments")
-public class CommentEntity {
-
+@Table(name = "attachment")
+public class AttachmentEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Id
     private Long id;
 
-    private String text;
+    private String title;
 
-    private String username;
-
-    private byte[] img;
-
-    private Timestamp creationDate;
+    private byte[] document;
 
     @ManyToOne
     private TaskEntity task;

@@ -42,4 +42,7 @@ public class TaskEntity {
 
     @OneToMany(mappedBy = "task")
     private Set<CommentEntity> comments;
+
+    @OneToMany(mappedBy = "task")
+    private Set<AttachmentEntity> attachments;
 }
