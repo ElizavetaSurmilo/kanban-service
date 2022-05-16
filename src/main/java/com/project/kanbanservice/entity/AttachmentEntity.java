@@ -12,7 +12,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "attachment")
+@Table(name = "attachments")
 public class AttachmentEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Id

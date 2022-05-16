@@ -2,7 +2,6 @@ package com.project.kanbanservice.factories;
 
 import com.project.kanbanservice.dto.AttachmentDto;
 import com.project.kanbanservice.entity.AttachmentEntity;
-import com.project.kanbanservice.entity.TagEntity;
 import org.springframework.stereotype.Component;
 
 @Component
